@@ -16,7 +16,7 @@ public class Main {
         box.addSweetie(cheesecake);
         box.removeSweetie(5);
 
-        // box.smartCostOptimiser(15);
+        box.smartCostOptimiser(4);
         // box.smartWeightOptimiser(5);
 
         box.getSweetiesCost();

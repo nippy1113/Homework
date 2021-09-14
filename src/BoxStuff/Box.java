@@ -53,13 +53,13 @@ public class Box implements SweetBox {
 
     //additional methods:
 
-    public void smartCostOptimiser(int inputCost) {
-        int totalCost = 0;
-        for (int i = 0; i < sweeties.size(); i++) {                    //find total cost
-            totalCost += sweeties.get(i).getCost();
+    public void smartCostOptimiser(double inputWeight) {
+        double totalWeight = 0;
+        for (int i = 0; i < sweeties.size(); i++) {                    //find total weight
+            totalWeight += sweeties.get(i).getWeight();
         }
 
-        while (totalCost >= inputCost) {
+        while (totalWeight >= inputWeight) {
             int min = sweeties.get(0).getCost();
             for (int i = 0; i < sweeties.size(); i++) {
                 if(sweeties.get(i).getCost() < min)               //find min value
@@ -67,7 +67,7 @@ public class Box implements SweetBox {
             }
             for (int i = 0; i < sweeties.size(); i++) {
                 if(sweeties.get(i).getCost() == min) {                         // remove min value
-                    totalCost -= sweeties.get(i).getCost();
+                    totalWeight -= sweeties.get(i).getWeight();
                     System.out.println(sweeties.get(i).getName() + " removed because of the optimisation");
                     sweeties.remove(i);
                     break;
